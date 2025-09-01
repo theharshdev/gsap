@@ -371,7 +371,7 @@ gsap.from(split.chars, {
   stagger: 0.2,
 });
 
-let skillSplit = SplitText.create(".skills p", { type: "words, chars" });
+let skillSplit = SplitText.create(".skills p");
 
 gsap.from(skillSplit.chars, {
   scrollTrigger: {
@@ -444,18 +444,31 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
-let splitPara = SplitText.create(".splitPara", { type: "word chars" });
+let splitPara = SplitText.create(".splitPara");
 
-gsap.from(splitPara.chars, {
+gsap.from(splitPara.lines, {
   scrollTrigger: {
-    trigger: splitPara.chars,
+    trigger: splitPara.lines,
     toggleActions: "restart restart restart restart",
-    start: "top 95%",
-    end: "top 30%",
+    start: "top 80%",
+    end: "top 40%",
     scrub: 2,
   },
   opacity: 0,
-  y: 120,
-  stagger: 0.01,
+  scaleY: -1,
+  stagger: 0.5,
 });
 
+const hoverTxts = document.querySelectorAll(".hoverTxt");
+
+hoverTxts.forEach((hoverTxt) => {
+  hoverTxt.addEventListener("mousemove", () => {
+    let splitNav = SplitText.create(hoverTxt);
+    gsap.from(splitNav.chars, {
+      opacity: 0,
+      x: 10,
+      duration: 0.3,
+      stagger: 0.02,
+    });
+  });
+});
