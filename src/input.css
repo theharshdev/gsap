@@ -4,3 +4,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+.product-info-main .box-tocart .input-text.qty {
+  width: 80px;
+}

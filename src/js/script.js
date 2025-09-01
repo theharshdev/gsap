@@ -12,7 +12,6 @@ const tl = gsap.timeline();
 
 tl.to(".loader", {
   y: "-100%",
-  duration: 0.5,
   stagger: {
     each: 0.2,
   },
@@ -156,9 +155,9 @@ gsap.to(".horiTxt", {
     scrub: 1,
     pin: true,
     start: "top 0%",
-    end: "top -500%",
+    end: "top -1000%",
   },
-  transform: "translateX(-81%)",
+  transform: "translateX(-83%)",
 });
 
 gsap.from(".yellowPara", {
@@ -296,10 +295,18 @@ const menuBox = document.querySelector(".menuBox");
 const timeMenu = gsap.timeline();
 const timeMenu2 = gsap.timeline();
 
+timeMenu.to("#smooth-content", {
+  opacity: 0,
+  duration: 1,
+});
+
+timeMenu2.to("#smooth-content", {
+  duration: 1,
+});
+
 timeMenu.from(menuBox, {
   opacity: 0,
   x: "100%",
-  duration: 0.7,
 });
 
 timeMenu.from(".menuBox a", {
@@ -308,10 +315,14 @@ timeMenu.from(".menuBox a", {
   stagger: 0.15,
 });
 
+timeMenu.from(closeMenu, {
+  opacity: 0,
+  y: -100,
+});
+
 timeMenu2.from(".menuBox2", {
   opacity: 0,
   x: "-100%",
-  duration: 0.7,
 });
 
 timeMenu2.from(".menuBox2 p", {
@@ -337,7 +348,7 @@ gsap.to("#revealPara", {
   scrollTrigger: {
     toggleActions: "restart restart restart restart",
     trigger: "#revealPara",
-    scrub: 2,
+    scrub: 1.5,
     start: "top 70%",
   },
   backgroundSize: "100%",
@@ -399,3 +410,52 @@ paraImgs.forEach((paraImg) => {
     y: 200,
   });
 });
+
+gsap.to(".marque", {
+  transform: "translateX(0)",
+  duration: 4,
+  repeat: -1,
+  ease: "none",
+});
+
+window.addEventListener("wheel", (e) => {
+  if (e.deltaY > 0) {
+    gsap.to(".marque", {
+      transform: "translateX(-200%)",
+      duration: 4,
+      repeat: -1,
+      ease: "none",
+    });
+    gsap.to(".marque img", {
+      rotate: 180,
+      duration: 0.5,
+    });
+  } else {
+    gsap.to(".marque", {
+      transform: "translateX(0)",
+      duration: 4,
+      repeat: -1,
+      ease: "none",
+    });
+    gsap.to(".marque img", {
+      rotate: 0,
+      duration: 0.5,
+    });
+  }
+});
+
+let splitPara = SplitText.create(".splitPara", { type: "word chars" });
+
+gsap.from(splitPara.chars, {
+  scrollTrigger: {
+    trigger: splitPara.chars,
+    toggleActions: "restart restart restart restart",
+    start: "top 95%",
+    end: "top 30%",
+    scrub: 2,
+  },
+  opacity: 0,
+  y: 120,
+  stagger: 0.01,
+});
+

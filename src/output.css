@@ -16,7 +16,6 @@
     --color-pink-400: oklch(71.8% 0.202 349.761);
     --color-zinc-200: oklch(92% 0.004 286.32);
     --color-zinc-300: oklch(87.1% 0.006 286.286);
-    --color-zinc-900: oklch(21% 0.006 285.885);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -258,11 +257,11 @@
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
-  .left-5 {
-    left: calc(var(--spacing) * 5);
-  }
   .left-10 {
     left: calc(var(--spacing) * 10);
+  }
+  .left-12 {
+    left: calc(var(--spacing) * 12);
   }
   .left-\[10\%\] {
     left: 10%;
@@ -294,9 +293,6 @@
   .my-20 {
     margin-block: calc(var(--spacing) * 20);
   }
-  .-mt-14 {
-    margin-top: calc(var(--spacing) * -14);
-  }
   .-mt-16 {
     margin-top: calc(var(--spacing) * -16);
   }
@@ -327,8 +323,8 @@
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
-  .mb-32 {
-    margin-bottom: calc(var(--spacing) * 32);
+  .mb-20 {
+    margin-bottom: calc(var(--spacing) * 20);
   }
   .block {
     display: block;
@@ -353,6 +349,9 @@
   }
   .h-40 {
     height: calc(var(--spacing) * 40);
+  }
+  .h-\[4vw\] {
+    height: 4vw;
   }
   .h-\[80dvh\] {
     height: 80dvh;
@@ -390,8 +389,15 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
   .grow {
     flex-grow: 1;
+  }
+  .-translate-x-full {
+    --tw-translate-x: -100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-y-1\/2 {
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
@@ -471,20 +477,23 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .bg-\[\#d9ff06\] {
+    background-color: #d9ff06;
+  }
   .bg-black {
     background-color: var(--color-black);
+  }
+  .bg-black\/10 {
+    background-color: color-mix(in srgb, #000 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
+    }
   }
   .bg-transparent {
     background-color: transparent;
   }
   .bg-white {
     background-color: var(--color-white);
-  }
-  .bg-white\/10 {
-    background-color: color-mix(in srgb, #fff 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-    }
   }
   .bg-white\/40 {
     background-color: color-mix(in srgb, #fff 40%, transparent);
@@ -494,9 +503,6 @@
   }
   .bg-yellow-400 {
     background-color: var(--color-yellow-400);
-  }
-  .bg-zinc-900 {
-    background-color: var(--color-zinc-900);
   }
   .bg-gradient-to-r {
     --tw-gradient-position: to right in oklab;
@@ -561,17 +567,26 @@
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
   }
+  .ps-12 {
+    padding-inline-start: calc(var(--spacing) * 12);
+  }
   .pt-0 {
     padding-top: calc(var(--spacing) * 0);
   }
   .pt-\[50dvh\] {
     padding-top: 50dvh;
+  }
+  .pb-5 {
+    padding-bottom: calc(var(--spacing) * 5);
   }
   .pb-\[100dvh\] {
     padding-bottom: 100dvh;
@@ -617,8 +632,14 @@
   .text-\[1px\] {
     font-size: 1px;
   }
+  .text-\[4\.5vw\] {
+    font-size: 4.5vw;
+  }
   .text-\[4\.6vw\] {
     font-size: 4.6vw;
+  }
+  .text-\[4vw\] {
+    font-size: 4vw;
   }
   .text-\[12vw\] {
     font-size: 12vw;
@@ -629,6 +650,10 @@
   .leading-6 {
     --tw-leading: calc(var(--spacing) * 6);
     line-height: calc(var(--spacing) * 6);
+  }
+  .leading-\[3\.6vw\] {
+    --tw-leading: 3.6vw;
+    line-height: 3.6vw;
   }
   .leading-none {
     --tw-leading: 1;
@@ -731,10 +756,6 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .duration-200 {
-    --tw-duration: 200ms;
-    transition-duration: 200ms;
-  }
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
@@ -797,6 +818,9 @@
       display: block;
     }
   }
+}
+.product-info-main .box-tocart .input-text.qty {
+  width: 80px;
 }
 @property --tw-translate-x {
   syntax: "*";
