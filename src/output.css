@@ -819,9 +819,6 @@
     }
   }
 }
-.product-info-main .box-tocart .input-text.qty {
-  width: 80px;
-}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
