@@ -396,6 +396,6 @@ paraImgs.forEach((paraImg) => {
       toggleActions: "restart restart restart restart",
       scrub: 2,
     },
-    y: 500,
+    y: 200,
   });
 });
