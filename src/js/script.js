@@ -575,7 +575,6 @@ gsap.from(splitYPara.words, {
     scrub: 2,
   },
   scrambleText: {
-    text: "",
     chars:
       "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?",
   },
