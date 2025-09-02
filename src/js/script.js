@@ -472,3 +472,111 @@ hoverTxts.forEach((hoverTxt) => {
     });
   });
 });
+
+const services = document.querySelectorAll(".services h3");
+const serviceBoxs = document.querySelectorAll(".services");
+
+serviceBoxs.forEach((serviceBox, i) => {
+  gsap.from(serviceBox, {
+    scrollTrigger: {
+      trigger: serviceBox,
+      toggleActions: "restart restart restart restart",
+      start: "top 80%",
+      end: "top 40%",
+      scrub: 2,
+    },
+    opacity: 0,
+    y: 35 * (i + 1),
+    duration: 0.5,
+  });
+});
+
+services.forEach((service) => {
+  const splittxt = SplitText.create(service);
+  gsap.from(splittxt.chars, {
+    scrollTrigger: {
+      trigger: splittxt.chars,
+      toggleActions: "restart restart restart restart",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 2,
+    },
+    opacity: 0,
+    x: 20,
+    duration: 0.5,
+    stagger: 0.03,
+  });
+});
+
+const serviceParas = document.querySelectorAll(".services p");
+
+serviceParas.forEach((servicePara) => {
+  const splitPara = SplitText.create(servicePara);
+  gsap.from(splitPara.lines, {
+    scrollTrigger: {
+      trigger: splitPara.lines,
+      toggleActions: "restart restart restart restart",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 2,
+    },
+    opacity: 0,
+    x: 30,
+    ease: "elastic",
+    duration: 0.5,
+    stagger: 0.03,
+  });
+});
+
+gsap.from("#footerTxt", {
+  scrollTrigger: {
+    trigger: "#footerTxt",
+    toggleActions: "restart restart restart restart",
+    start: "top 80%",
+    end: "top 50%",
+    scrub: 2,
+  },
+  opacity: 0,
+  y: 150,
+  duration: 0.4,
+});
+
+gsap.from("footer h3", {
+  scrollTrigger: {
+    trigger: "footer h3",
+    toggleActions: "restart restart restart restart",
+    start: "top 80%",
+    end: "top 50%",
+    scrub: 2,
+  },
+  y: 120,
+  opacity: 0,
+  duration: 1,
+});
+
+gsap.from("footer p", {
+  scrollTrigger: {
+    trigger: "footer p",
+    toggleActions: "restart restart restart restart",
+    start: "top 80%",
+    end: "top 50%",
+    scrub: 2,
+  },
+  y: 120,
+  opacity: 0,
+  duration: 1,
+});
+
+gsap.from("footer a", {
+  scrollTrigger: {
+    trigger: "footer a",
+    toggleActions: "restart restart restart restart",
+    start: "top 80%",
+    end: "top 50%",
+    scrub: 2,
+  },
+  y: 120,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.1,
+});
