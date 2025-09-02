@@ -573,7 +573,7 @@ const hoverTxts = document.querySelectorAll(".hoverTxt");
 
 hoverTxts.forEach((hoverTxt) => {
   const hoverTxtCont = hoverTxt.textContent;
-  hoverTxt.addEventListener("mousemove", () => {
+  function hoverTxtFnc() {
     gsap.to(hoverTxt, {
       duration: 0.6,
       scrambleText: {
@@ -582,7 +582,9 @@ hoverTxts.forEach((hoverTxt) => {
           "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?",
       },
     });
-  });
+  }
+  hoverTxt.addEventListener("mouseover", hoverTxtFnc);
+  hoverTxt.addEventListener("mouseleave", hoverTxtFnc);
 });
 
 const splitYPara = SplitText.create(".yellowPara");
