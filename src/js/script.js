@@ -165,18 +165,6 @@ gsap.to(".horiTxt", {
   transform: "translateX(-83%)",
 });
 
-gsap.from(".yellowPara", {
-  scrollTrigger: {
-    trigger: ".yellowPara",
-    scrub: 2,
-    start: "top 80%",
-    end: "top 40%",
-  },
-  scale: 0.3,
-  opacity: 0,
-  duration: 2,
-});
-
 const stringLine = document.getElementById("stringLine");
 
 stringLine.addEventListener("mousemove", (e) => {
@@ -464,20 +452,6 @@ gsap.from(splitPara.lines, {
   stagger: 0.5,
 });
 
-const hoverTxts = document.querySelectorAll(".hoverTxt");
-
-hoverTxts.forEach((hoverTxt) => {
-  hoverTxt.addEventListener("mousemove", () => {
-    let splitNav = SplitText.create(hoverTxt);
-    gsap.from(splitNav.chars, {
-      opacity: 0,
-      x: 10,
-      duration: 0.3,
-      stagger: 0.02,
-    });
-  });
-});
-
 const services = document.querySelectorAll(".services h3");
 const serviceBoxs = document.querySelectorAll(".services");
 
@@ -574,6 +548,8 @@ gsap.from("footer a", {
   stagger: 0.1,
 });
 
+const hoverTxts = document.querySelectorAll(".hoverTxt");
+
 hoverTxts.forEach((hoverTxt) => {
   const hoverTxtCont = hoverTxt.textContent;
   hoverTxt.addEventListener("mousemove", () => {
@@ -581,8 +557,29 @@ hoverTxts.forEach((hoverTxt) => {
       duration: 0.6,
       scrambleText: {
         text: hoverTxtCont,
-        chars: "deawFAWFAFWFW13231#@#!$U!@($",
+        chars:
+          "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?",
       },
     });
   });
+});
+
+const splitYPara = SplitText.create(".yellowPara");
+
+gsap.from(splitYPara.words, {
+  scrollTrigger: {
+    trigger: splitYPara.words,
+    toggleActions: "restart restart restart restart",
+    start: "top 80%",
+    end: "top 40%",
+    scrub: 2,
+  },
+  scrambleText: {
+    text: "",
+    chars:
+      "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?",
+  },
+  stagger: 0.5,
+  duration: 2,
+  ease: "back",
 });
