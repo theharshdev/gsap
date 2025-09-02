@@ -673,11 +673,11 @@
   .text-\[1px\] {
     font-size: 1px;
   }
+  .text-\[4\.4vw\] {
+    font-size: 4.4vw;
+  }
   .text-\[4\.5vw\] {
     font-size: 4.5vw;
-  }
-  .text-\[4\.6vw\] {
-    font-size: 4.6vw;
   }
   .text-\[4vw\] {
     font-size: 4vw;
