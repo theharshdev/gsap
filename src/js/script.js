@@ -21,7 +21,7 @@ tl.to(".loadTxt", {
     chars:
       "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?",
   },
-  duration: 3,
+  duration: 2,
 });
 
 tl.to(".loadTxt", {
