@@ -37,6 +37,11 @@ tl.to(".loader", {
   },
 });
 
+tl.to(".body", {
+  height: "auto",
+  duration: 0,
+});
+
 tl.from(".navbar p", {
   y: -20,
   opacity: 0,
