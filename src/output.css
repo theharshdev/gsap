@@ -288,18 +288,6 @@
   .z-50 {
     z-index: 50;
   }
-  .z-\[9\] {
-    z-index: 9;
-  }
-  .z-\[99\] {
-    z-index: 99;
-  }
-  .z-\[999\] {
-    z-index: 999;
-  }
-  .z-\[9999\] {
-    z-index: 9999;
-  }
   .z-\[99999\] {
     z-index: 99999;
   }
@@ -518,18 +506,6 @@
     --tw-scale-y: 200%;
     --tw-scale-z: 200%;
     scale: var(--tw-scale-x) var(--tw-scale-y);
-  }
-  .scale-\[2\] {
-    scale: 2;
-  }
-  .scale-\[3\] {
-    scale: 3;
-  }
-  .scale-\[5\] {
-    scale: 5;
-  }
-  .scale-\[50\] {
-    scale: 50;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
