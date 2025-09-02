@@ -560,19 +560,6 @@ gsap.from("footer h3", {
   duration: 1,
 });
 
-gsap.from("footer p", {
-  scrollTrigger: {
-    trigger: "footer p",
-    toggleActions: "restart restart restart restart",
-    start: "top 80%",
-    end: "top 50%",
-    scrub: 2,
-  },
-  y: 120,
-  opacity: 0,
-  duration: 1,
-});
-
 gsap.from("footer a", {
   scrollTrigger: {
     trigger: "footer a",
