@@ -160,9 +160,9 @@ gsap.to(".horiTxt", {
     scrub: 1,
     pin: true,
     start: "top 0%",
-    end: "top -1000%",
+    end: "top -300%",
   },
-  transform: "translateX(-83%)",
+  transform: "translateX(-55%)",
 });
 
 const stringLine = document.getElementById("stringLine");
@@ -267,6 +267,7 @@ imgCursor.forEach((imgCursors) => {
     gsap.to("#cursor", {
       scale: 15,
       duration: 2,
+      opacity: 0.5,
       ease: "elastic.out(1,0.4)",
     });
     document.getElementById("cursor").innerHTML = "View More";
