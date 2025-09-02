@@ -1,5 +1,10 @@
 // Register the plugin
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+gsap.registerPlugin(
+  ScrollTrigger,
+  ScrollSmoother,
+  SplitText,
+  ScrambleTextPlugin
+);
 
 ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
@@ -579,4 +584,17 @@ gsap.from("footer a", {
   opacity: 0,
   duration: 1,
   stagger: 0.1,
+});
+
+hoverTxts.forEach((hoverTxt) => {
+  const hoverTxtCont = hoverTxt.textContent;
+  hoverTxt.addEventListener("mousemove", () => {
+    gsap.to(hoverTxt, {
+      duration: 0.6,
+      scrambleText: {
+        text: hoverTxtCont,
+        chars: "deawFAWFAFWFW13231#@#!$U!@($",
+      },
+    });
+  });
 });
