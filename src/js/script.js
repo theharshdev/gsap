@@ -15,6 +15,21 @@ ScrollSmoother.create({
 
 const tl = gsap.timeline();
 
+tl.to(".loadTxt", {
+  scrambleText: {
+    text: "100%",
+    chars:
+      "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?",
+  },
+  duration: 3,
+});
+
+tl.to(".loadTxt", {
+  opacity: 0,
+  y: -100,
+  duration: 1,
+});
+
 tl.to(".loader", {
   y: "-100%",
   stagger: {

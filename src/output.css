@@ -1,8 +1,5 @@
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 @layer properties;
-* {
-  font-family: "Montserrat", sans-serif;
-}
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -53,6 +50,8 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-mich: "Michroma", sans-serif;
+    --font-monster: "Montserrat", sans-serif;
   }
 }
 @layer base {
@@ -279,8 +278,8 @@
   .z-50 {
     z-index: 50;
   }
-  .z-\[99\] {
-    z-index: 99;
+  .z-\[99999\] {
+    z-index: 99999;
   }
   .col-span-1 {
     grid-column: span 1 / span 1;
@@ -404,6 +403,11 @@
   }
   .grow {
     flex-grow: 1;
+  }
+  .-translate-1\/2 {
+    --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+    --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-full {
     --tw-translate-x: -100%;
@@ -637,6 +641,12 @@
   .text-end {
     text-align: end;
   }
+  .font-mich {
+    font-family: var(--font-mich);
+  }
+  .font-monster {
+    font-family: var(--font-monster);
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
@@ -765,6 +775,9 @@
   .text-zinc-300 {
     color: var(--color-zinc-300);
   }
+  .text-zinc-800 {
+    color: var(--color-zinc-800);
+  }
   .lowercase {
     text-transform: lowercase;
   }
@@ -776,9 +789,6 @@
   }
   .opacity-0 {
     opacity: 0%;
-  }
-  .mix-blend-difference {
-    mix-blend-mode: difference;
   }
   .outline-0 {
     outline-style: var(--tw-outline-style);

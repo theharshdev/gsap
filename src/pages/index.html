@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -17,7 +17,7 @@
     <link href="../output.css" rel="stylesheet" />
     <title>GSAP</title>
   </head>
-  <body class="bg-black min-h-full overflow-x-hidden">
+  <body class="bg-black min-h-full overflow-x-hidden font-monster">
     <!-- Cusor -->
     <div
       id="cursor"
@@ -25,12 +25,16 @@
     ></div>
     <!-- Loader -->
     <div
-      class="grid grid-cols-4 w-full fixed top-0 left-0 h-dvh z-[99] pointer-events-none"
+      class="grid grid-cols-4 w-full fixed top-0 left-0 h-dvh z-[99999] pointer-events-none"
     >
-      <div class="loader bg-[#FEFCE1] h-dvh"></div>
-      <div class="loader bg-[#FEFCE1] h-dvh"></div>
-      <div class="loader bg-[#FEFCE1] h-dvh"></div>
-      <div class="loader bg-[#FEFCE1] h-dvh"></div>
+      <span
+        class="text-9xl font-bold text-zinc-800 font-mich absolute top-1/2 left-1/2 -translate-1/2 z-10 loadTxt"
+        >0%</span
+      >
+      <div class="loader bg-white h-dvh"></div>
+      <div class="loader bg-white h-dvh"></div>
+      <div class="loader bg-white h-dvh"></div>
+      <div class="loader bg-white h-dvh"></div>
     </div>
     <!-- Menu -->
     <div
