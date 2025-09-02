@@ -544,6 +544,7 @@ gsap.from("#footerTxt", {
   opacity: 0,
   y: 150,
   duration: 0.4,
+  ease: "back",
 });
 
 gsap.from("footer h3", {
