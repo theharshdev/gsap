@@ -21,7 +21,7 @@ tl.to(".loadTxt", {
     chars:
       "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&?",
   },
-  duration: 2,
+  duration: 3,
 });
 
 tl.to(".loadTxt", {
@@ -31,9 +31,12 @@ tl.to(".loadTxt", {
 });
 
 tl.to(".loader", {
-  y: "-100%",
+  scaleY: -1,
+  opacity: 0,
+  ease: "elastic.inOut(1.5,0.2)",
   stagger: {
-    each: 0.2,
+    each: 0.01,
+    from: "random",
   },
 });
 
@@ -575,7 +578,7 @@ hoverTxts.forEach((hoverTxt) => {
   const hoverTxtCont = hoverTxt.textContent;
   function hoverTxtFnc() {
     gsap.to(hoverTxt, {
-      duration: 0.6,
+      duration: 1.5,
       scrambleText: {
         text: hoverTxtCont,
         chars:
@@ -604,4 +607,10 @@ gsap.from(splitYPara.words, {
   stagger: 0.5,
   duration: 2,
   ease: "back",
+});
+
+window.addEventListener("scroll", (e) => {
+  gsap.to("#scroll-spy", {
+    height: "100%",
+  });
 });
