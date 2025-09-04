@@ -158,15 +158,18 @@ gsap.from("#box01", {
   borderRadius: "50%",
 });
 
-gsap.from("#box01 h3", {
+const splitHerotxt = SplitText.create("#box01 h3");
+
+gsap.from(splitHerotxt.chars, {
   scrollTrigger: {
-    trigger: "#box01",
-    start: "top 80%",
-    end: "top 30%",
+    trigger: splitHerotxt.chars,
+    start: "top 60%",
+    end: "top 40%",
     scrub: 2.5,
   },
+  stagger: 0.3,
   opacity: 0,
-  x: 1500,
+  x: 150,
 });
 
 gsap.from(".txt-1", {
@@ -438,23 +441,35 @@ gsap.to(".marque", {
 window.addEventListener("wheel", (e) => {
   if (e.deltaY > 0) {
     gsap.to(".marque", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
       transform: "translateX(-200%)",
-      duration: 4,
+      duration: 2,
       repeat: -1,
       ease: "none",
     });
     gsap.to(".marque img", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
       rotate: 180,
       duration: 0.5,
     });
   } else {
     gsap.to(".marque", {
-      transform: "translateX(0)",
-      duration: 4,
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      transform: "translateX(0%)",
+      duration: 2,
       repeat: -1,
       ease: "none",
     });
     gsap.to(".marque img", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
       rotate: 0,
       duration: 0.5,
     });
