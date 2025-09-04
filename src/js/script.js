@@ -626,6 +626,11 @@ gsap.from(splitYPara.words, {
 
 window.addEventListener("scroll", (e) => {
   gsap.to("#scroll-spy", {
+    scrollTrigger: {
+      trigger: "#scroll-spy",
+      toggleActions: "restart restart restart restart",
+      scrub: 2,
+    },
     height: "100%",
   });
 });
