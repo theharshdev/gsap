@@ -678,7 +678,7 @@ document.getElementById("scrollTopBtn").addEventListener("click", () => {
   const scrollPercent = Math.floor(
     (scrollTop / (fullHeight - windowHeight)) * 100 + 1
   );
-  if (scrollPercent === 100) {
+  if (scrollPercent >= 99) {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
