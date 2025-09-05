@@ -21,14 +21,14 @@
     <!-- Cusor -->
     <div
       id="cursor"
-      class="w-4 h-4 whitespace-nowrap flex justify-center items-center text-[1px] fixed -top-2 -left-2 rounded-full bg-white pointer-events-none z-50"
+      class="w-4 h-4 whitespace-nowrap lg:flex justify-center items-center text-[1px] fixed -top-2 -left-2 rounded-full bg-white pointer-events-none z-50 hidden"
     ></div>
     <!-- Loader -->
     <div
       class="grid grid-cols-12 grid-rows-12 w-full fixed top-0 left-0 h-dvh z-[99999] overflow-hidden pointer-events-none"
     >
       <span
-        class="text-9xl font-bold text-white font-mich mix-blend-difference absolute top-1/2 left-1/2 -translate-1/2 z-10 loadTxt"
+        class="lg:text-9xl md:text-7xl text-6xl font-bold text-white font-mich mix-blend-difference absolute top-1/2 left-1/2 -translate-1/2 z-10 loadTxt"
         >0%</span
       >
       <div class="loader bg-white h-full row-span-2"></div>
@@ -114,7 +114,7 @@
     </div>
     <!-- Menu -->
     <div
-      class="text-white text-6xl py-32 px-20 bg-center bg-no-repeat bg-cover fixed top-0 right-0 w-1/2 h-full z-40 flex flex-col gap-8 menuBox items-start"
+      class="text-white lg:text-6xl text-4xl py-32 px-20 bg-center bg-no-repeat bg-cover fixed top-0 right-0 lg:w-1/2 w-full h-full z-40 flex flex-col gap-8 menuBox items-start"
       style="background-image: url('../img/img3.webp')"
     >
       <a href="#" class="imgCursor hoverTxt">Home</a>
@@ -129,10 +129,10 @@
     </div>
     <!--  -->
     <div
-      class="text-2xl font-light text-zinc-200 py-32 px-20 bg-center bg-no-repeat bg-cover fixed top-0 left-0 w-1/2 h-full z-40 flex flex-col gap-8 menuBox2"
+      class="text-2xl font-light text-zinc-200 py-32 px-20 bg-center bg-no-repeat bg-cover fixed top-0 left-0 w-1/2 h-full z-40 lg:flex hidden flex-col gap-8 menuBox2"
       style="background-image: url('../img/img2.webp')"
     >
-      <p>
+      <p class="text-sm">
         We accompany you throughout your journey, from the inception to the
         actualization of your online persona, including branding, webdesign,
         marketing and so much more. The perfect blend of knowledge, creativity
@@ -176,22 +176,30 @@
           <div
             class="flex justify-between items-center gap-6 max-w-7xl mx-auto px-4"
           >
-            <p class="text-2xl">Sheriantns</p>
+            <p class="md:text-2xl text-xl">Sheriantns</p>
             <div class="flex items-center gap-12">
-              <a class="inline-block hoverTxt overflow-hidden p-2" href="#"
+              <a
+                class="lg:inline-block hidden hoverTxt overflow-hidden p-2"
+                href="#"
                 >Home</a
               >
-              <a class="inline-block hoverTxt overflow-hidden p-2" href="#"
+              <a
+                class="lg:inline-block hidden hoverTxt overflow-hidden p-2"
+                href="#"
                 >About</a
               >
-              <a class="inline-block hoverTxt overflow-hidden p-2" href="#"
+              <a
+                class="lg:inline-block hidden hoverTxt overflow-hidden p-2"
+                href="#"
                 >Services</a
               >
-              <a class="inline-block hoverTxt overflow-hidden p-2" href="#"
+              <a
+                class="lg:inline-block hidden hoverTxt overflow-hidden p-2"
+                href="#"
                 >Contact</a
               >
               <a
-                class="inline-block hoverTxt overflow-hidden p-2 menuBtn cursor-pointer"
+                class="lg:order-5 order-1 inline-block hoverTxt overflow-hidden p-2 menuBtn cursor-pointer"
                 >Menu</a
               >
             </div>
@@ -209,12 +217,12 @@
             />
             <div class="relative z-10">
               <p
-                class="txt-1 text-9xl mx-auto font-extrabold font-mich text-center text-lime-300"
+                class="txt-1 lg:text-9xl md:text-7xl text-6xl mx-auto font-extrabold font-mich text-center text-lime-300"
               >
                 3D.
               </p>
               <p
-                class="paragraph text-zinc-200 text-7xl font-medium text-center tracking-tight px-12 max-w-5xl relative z-10"
+                class="paragraph text-zinc-200 lg:text-7xl md:text-5xl text-2xl font-medium text-center tracking-tight px-12 max-w-5xl relative z-10"
               >
                 CineShader is a
                 <span class="text-[#FEFCE1]">real-time</span>
@@ -223,7 +231,7 @@
                 into a cinematic 3D.
               </p>
               <p
-                class="max-w-2xl mx-auto my-3 text-zinc-200 text-sm font-light text-center mainPara"
+                class="max-w-2xl mx-auto my-3 text-zinc-200 text-sm font-light px-5 text-center mainPara"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
                 unde minus totam consequuntur iste molestias, consectetur,
@@ -233,7 +241,7 @@
                 <a
                   id="mainLink"
                   href="#"
-                  class="bg-transparent py-6 px-14 text-white font-medium group relative"
+                  class="lg:text-lg text-sm bg-transparent py-6 px-14 text-white font-medium group relative"
                 >
                   <img
                     class="absolute top-0 left-0 w-full h-full brightness-[100] inline-block transition duration-300 group-hover:-rotate-x-[35deg] group-hover:rotate-y-5 group-hover:-rotate-z-8"
@@ -246,7 +254,9 @@
           </div>
         </div>
         <!--  -->
-        <div class="text-zinc-300 text-4xl px-4 my-12 max-w-7xl mx-auto">
+        <div
+          class="text-zinc-300 md:text-4xl text-2xl px-4 my-12 max-w-7xl mx-auto"
+        >
           <h3 class="head mt-10">
             At Brandium® we craft strong brand identities, visually striking
             website designs, and impactful marketing campaigns that go beyond
@@ -262,7 +272,7 @@
           <!--  -->
           <div
             id="box01"
-            class="p-4 h-[90dvh] max-h-[600px] flex mt-16 max-w-7xl mx-auto"
+            class="p-4 h-[90dvh] lg:max-h-[600px] max-h-[400px] flex mt-16 max-w-7xl mx-auto"
           >
             <div
               class="flex justify-center h-full w-full items-center relative text-6xl text-zinc-300"
@@ -272,7 +282,7 @@
                 src="../img/img3.webp"
               />
               <h3
-                class="text-9xl text-white font-mich leading-none absolute top-1/2 -translate-y-1/2 z-10"
+                class="lg:text-9xl text-6xl text-white font-mich leading-none absolute top-1/2 -translate-y-1/2 z-10"
               >
                 Lets
                 <a href="#" class="block"> Connect! </a>
@@ -287,19 +297,19 @@
           >
             <img
               src="../img/img1.webp"
-              class="absolute top-4 left-10 w-40 h-40 object-cover rounded-full"
+              class="absolute top-4 left-10 lg:block hidden w-40 h-40 object-cover rounded-full"
             />
             <img
               src="../img/img2.webp"
-              class="absolute bottom-5 left-[10%] w-40 h-40 object-cover rounded-full"
+              class="absolute bottom-5 left-[10%] lg:block hidden w-40 h-40 object-cover rounded-full"
             />
             <img
               src="../img/img3.webp"
-              class="absolute -top-20 left-1/2 w-40 h-40 object-cover rounded-full"
+              class="absolute -top-20 left-1/2 lg:block hidden w-40 h-40 object-cover rounded-full"
             />
             <img
               src="../img/img4.webp"
-              class="absolute bottom-0 right-10 w-40 h-40 object-cover rounded-full"
+              class="absolute bottom-0 right-10 lg:block hidden w-40 h-40 object-cover rounded-full"
             />
             <span
               class="text-[4.4vw] lowercase text-amber-700 absolute top-1/2 left-12 -translate-y-1/2 whitespace-nowrap"
@@ -312,7 +322,9 @@
         <!--  -->
         <div class="my-20">
           <div class="bg-black px-4 max-w-7xl mx-auto">
-            <p class="text-zinc-300 text-5xl font-medium italic yellowPara">
+            <p
+              class="text-zinc-300 lg:text-5xl md:text-4xl text-2xl font-medium italic yellowPara"
+            >
               We accompany you throughout your journey, from the inception to
               the actualization of your online persona, including branding,
               webdesign, marketing and so much more. The perfect blend of
@@ -322,7 +334,7 @@
             <div class="mt-12">
               <a
                 href="#"
-                class="bg-transparent py-6 px-14 text-white font-medium group relative"
+                class="lg:text-lg text-sm bg-transparent py-6 px-14 text-white font-medium group relative"
               >
                 <img
                   class="absolute top-0 left-0 w-full h-full brightness-[100] inline-block transition duration-300 group-hover:-rotate-x-[35deg] group-hover:rotate-y-5 group-hover:-rotate-z-8"
@@ -348,7 +360,7 @@
         </div>
         <!--  -->
         <div
-          class="-mt-28 px-4 max-w-7xl mx-auto grid gap-20 grid-cols-2 imgCont"
+          class="-mt-28 px-4 max-w-7xl mx-auto grid gap-20 lg:grid-cols-2 grid-cols-1 imgCont"
         >
           <div class="relative">
             <img
@@ -359,7 +371,7 @@
               Lorem, ipsum dolor.
             </h3>
           </div>
-          <div class="relative translate-y-1/2">
+          <div class="relative lg:translate-y-1/2">
             <img
               class="p-6 imgCursor h-[80dvh] object-cover w-full img2"
               src="../img/img4.webp"
@@ -377,7 +389,7 @@
               Lorem, ipsum dolor.
             </h3>
           </div>
-          <div class="relative translate-y-1/2">
+          <div class="relative lg:translate-y-1/2">
             <img
               class="p-6 imgCursor h-[80dvh] object-cover w-full img4"
               src="../img/img7.webp"
@@ -388,10 +400,10 @@
           </div>
         </div>
         <!--  -->
-        <div class="my-20 pt-[50dvh] max-w-7xl mx-auto">
+        <div class="my-20 lg:pt-[50dvh] px-6 max-w-7xl mx-auto">
           <p
             id="revealPara"
-            class="text-white/20 bg-clip-text bg-no-repeat bg-gradient-to-r from-[#FEFCE1] to-[#FEFCE1] inline text-6xl font-medium"
+            class="text-white/20 bg-clip-text bg-no-repeat bg-gradient-to-r from-[#FEFCE1] to-[#FEFCE1] inline lg:text-6xl md:text-4xl text-2xl font-medium"
             style="background-size: 0"
           >
             Digital-first branding, top-notch webdesign, lucrative e-commerce
@@ -406,11 +418,11 @@
         </div>
         <!--  -->
         <h3
-          class="split text-9xl mt-32 text-center text-white font-medium overflow-hidden"
+          class="split lg:text-9xl md:text-7xl text-6xl mt-32 text-center text-white font-medium overflow-hidden"
         >
           Portfolio
         </h3>
-        <section class="pt-20">
+        <section class="pt-20 px-6">
           <div class="max-w-7xl mx-auto">
             <!--  -->
             <div
@@ -423,9 +435,13 @@
               <div
                 class="absolute top-0 left-0 w-full h-full z-10 bg-black/10 backdrop-blur-lg opacity-0 group-hover:opacity-100 transition duration-400 ease-in-out p-12 text-white"
               >
-                <h3 class="text-4xl font-bold mb-3">Redetzky Design</h3>
-                <p class="text-2xl mb-5">Campaign Design</p>
-                <div class="text-base grid grid-cols-4 gap-4">
+                <h3 class="lg:text-4xl text-2xl font-bold mb-3">
+                  Redetzky Design
+                </h3>
+                <p class="lg:text-2xl text-xl mb-5">Campaign Design</p>
+                <div
+                  class="md:text-base text-xs grid lg:grid-cols-4 grid-cols-2 gap-4"
+                >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
                     >Webdesign</span
@@ -453,7 +469,7 @@
                   >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
-                    >Packaging and Tag Design</span
+                    >Tag Design</span
                   >
                 </div>
                 <p class="text-sm mt-10">
@@ -475,9 +491,13 @@
               <div
                 class="absolute top-0 left-0 w-full h-full z-10 bg-black/10 backdrop-blur-lg opacity-0 group-hover:opacity-100 transition duration-400 ease-in-out p-12 text-white"
               >
-                <h3 class="text-4xl font-bold mb-3">Redetzky Design</h3>
-                <p class="text-2xl mb-5">Campaign Design</p>
-                <div class="text-base grid grid-cols-4 gap-4">
+                <h3 class="lg:text-4xl text-2xl font-bold mb-3">
+                  Redetzky Design
+                </h3>
+                <p class="lg:text-2xl text-xl mb-5">Campaign Design</p>
+                <div
+                  class="md:text-base text-xs grid lg:grid-cols-4 grid-cols-2 gap-4"
+                >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
                     >Webdesign</span
@@ -505,7 +525,7 @@
                   >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
-                    >Packaging and Tag Design</span
+                    >Tag Design</span
                   >
                 </div>
                 <p class="text-sm mt-10">
@@ -527,9 +547,13 @@
               <div
                 class="absolute top-0 left-0 w-full h-full z-10 bg-black/10 backdrop-blur-lg opacity-0 group-hover:opacity-100 transition duration-400 ease-in-out p-12 text-white"
               >
-                <h3 class="text-4xl font-bold mb-3">Redetzky Design</h3>
-                <p class="text-2xl mb-5">Campaign Design</p>
-                <div class="text-base grid grid-cols-4 gap-4">
+                <h3 class="lg:text-4xl text-2xl font-bold mb-3">
+                  Redetzky Design
+                </h3>
+                <p class="lg:text-2xl text-xl mb-5">Campaign Design</p>
+                <div
+                  class="md:text-base text-xs grid lg:grid-cols-4 grid-cols-2 gap-4"
+                >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
                     >Webdesign</span
@@ -557,7 +581,7 @@
                   >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
-                    >Packaging and Tag Design</span
+                    >Tag Design</span
                   >
                 </div>
                 <p class="text-sm mt-10">
@@ -579,9 +603,13 @@
               <div
                 class="absolute top-0 left-0 w-full h-full z-10 bg-black/10 backdrop-blur-lg opacity-0 group-hover:opacity-100 transition duration-400 ease-in-out p-12 text-white"
               >
-                <h3 class="text-4xl font-bold mb-3">Redetzky Design</h3>
-                <p class="text-2xl mb-5">Campaign Design</p>
-                <div class="text-base grid grid-cols-4 gap-4">
+                <h3 class="lg:text-4xl text-2xl font-bold mb-3">
+                  Redetzky Design
+                </h3>
+                <p class="lg:text-2xl text-xl mb-5">Campaign Design</p>
+                <div
+                  class="md:text-base text-xs grid lg:grid-cols-4 grid-cols-2 gap-4"
+                >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
                     >Webdesign</span
@@ -609,7 +637,7 @@
                   >
                   <span
                     class="py-2 px-5 border border-white rounded-full text-center whitespace-nowrap"
-                    >Packaging and Tag Design</span
+                    >Tag Design</span
                   >
                 </div>
                 <p class="text-sm mt-10">
@@ -624,7 +652,9 @@
         </section>
         <!--  -->
         <section>
-          <div class="max-w-7xl mx-auto py-32 grid grid-cols-3 gap-12">
+          <div
+            class="max-w-7xl mx-auto py-32 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 px-6 gap-12"
+          >
             <div class="p-8 text-black bg-white services">
               <h3 class="text-2xl leading-6 font-medium overflow-hidden">
                 Web Developement
@@ -714,7 +744,7 @@
         <!--  -->
         <section>
           <p
-            class="text-[4vw] leading-[3.6vw] text-zinc-300 max-w-7xl mx-auto mb-32 splitPara overflow-hidden pb-5"
+            class="lg:text-[4vw] text-2xl px-6 text-zinc-300 max-w-7xl mx-auto mb-32 splitPara overflow-hidden pb-5"
           >
             The term 'git' is not recognized as the name of a cmdlet, function,
             script file, or operable program. Check the spelling of the name, or
@@ -786,13 +816,13 @@
           <div class="max-w-7xl mx-auto mb-32">
             <h2
               id="footerTxt"
-              class="text-black uppercase font-semibold text-[13.8vw] leading-none"
+              class="text-black text-center uppercase font-semibold text-[13.8vw] leading-none"
             >
               Thankyou!
             </h2>
           </div>
-          <div class="max-w-7xl mx-auto grid grid-cols-4 gap-12">
-            <div class="col-span-2 pr-12">
+          <div class="max-w-7xl mx-auto grid grid-cols-4 gap-12 px-6">
+            <div class="lg:col-span-2 col-span-4 pr-12">
               <h3 class="text-4xl leading-9 font-semibold">
                 Keep in the loop with the newsletter.
               </h3>
@@ -810,49 +840,81 @@
                 </button>
               </div>
             </div>
-            <div class="col-span-1 flex flex-col gap-4 items-start">
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt"
+            <div
+              class="lg:col-span-1 col-span-2 flex flex-col gap-4 items-start"
+            >
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
                 >Blog
               </a>
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt">
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
+              >
                 Showcase</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt">
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
+              >
                 Learn GSAP</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt">
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
+              >
                 GSAP & Webflow</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt">
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
+              >
                 Contact Us</a
               >
             </div>
-            <div class="col-span-1 flex flex-col gap-4 items-start">
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt"
+            <div
+              class="lg:col-span-1 col-span-2 flex flex-col gap-4 items-start"
+            >
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
                 >Forums</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt"
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
                 >Codepen</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt"
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
                 >LinkedIn</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt"
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
                 >Bluesky</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt"
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
                 >GitHub</a
               >
-              <a href="#" class="text-lg font-medium hover:opacity-60 hoverTxt"
+              <a
+                href="#"
+                class="lg:text-lg text-sm font-medium hover:opacity-60 hoverTxt"
                 >X</a
               >
             </div>
           </div>
           <div
-            class="flex justify-between items-center gap-8 mt-32 text-sm max-w-7xl mx-auto"
+            class="flex lg:flex-nowrap flex-wrap lg:justify-between justify-center px-6 lg:text-left text-center items-center gap-8 mt-32 text-sm max-w-7xl mx-auto"
           >
-            <p>©2025 GSAP - A Webflow Product. All rights reserved.</p>
-            <p>Privacy Policy. Terms of Use.</p>
+            <p class="text-sm">
+              ©2025 GSAP - A Webflow Product. All rights reserved.
+            </p>
+            <p class="text-sm">Privacy Policy. Terms of Use.</p>
           </div>
         </footer>
       </div>

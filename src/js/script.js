@@ -586,14 +586,8 @@ gsap.from(splitYPara.words, {
   duration: 2,
   ease: "back",
 });
-function wheelScroll(e) {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
-  const windowHeight = window.innerHeight;
-  const fullHeight = document.documentElement.scrollHeight;
-  const scrollPercent = Math.floor(
-    (scrollTop / (fullHeight - windowHeight)) * 100 + 1
-  );
 
+window.addEventListener("wheel", (e) => {
   if (e.deltaY > 0) {
     gsap.to(".marque", {
       scrollTrigger: {
@@ -610,11 +604,6 @@ function wheelScroll(e) {
       },
       rotate: 180,
       duration: 0.5,
-    });
-    gsap.to("#scroll-spy-img", {
-      rotate: `${scrollPercent * 10}deg`,
-      duration: 1,
-      ease: "power.inout",
     });
   } else {
     gsap.to(".marque", {
@@ -633,16 +622,23 @@ function wheelScroll(e) {
       rotate: 0,
       duration: 0.5,
     });
-    gsap.to("#scroll-spy-img", {
-      rotate: `${scrollPercent * 10}deg`,
-      duration: 1,
-      ease: "power.inout",
-    });
   }
-}
+});
 
-window.addEventListener("wheel", wheelScroll);
-window.addEventListener("scroll", wheelScroll);
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
+  const fullHeight = document.documentElement.scrollHeight;
+  const scrollPercent = Math.floor(
+    (scrollTop / (fullHeight - windowHeight)) * 100
+  );
+
+  gsap.to("#scroll-spy-img", {
+    rotate: `${scrollPercent * 10}deg`,
+    duration: 1,
+    ease: "power.inout",
+  });
+});
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
