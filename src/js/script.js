@@ -12,7 +12,10 @@ ScrollSmoother.create({
   content: "#smooth-content",
   smooth: 2,
   effects: true,
+  smoothTouch: 0.1,
 });
+
+ScrollTrigger.normalizeScroll(true);
 
 const tl = gsap.timeline();
 
