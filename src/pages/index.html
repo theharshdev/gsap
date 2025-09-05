@@ -146,11 +146,17 @@
       <p></p>
     </div>
     <!-- scroll-spy -->
+    <img
+      id="scroll-spy-img"
+      class="fixed bottom-3 right-3 brightness-[10000] mix-blend-difference w-20 h-20 scale-110 inline-block pointer-events-none z-50"
+      src="https://theharshdev.github.io/anime/assets/images/ring.webp"
+    />
     <span
+      id="scrollTopBtn"
       class="fixed z-[9999] bottom-5 right-5 w-16 h-16 rounded-full flex justify-center items-center bg-white overflow-hidden"
     >
       <span
-        class="bg-yellow-300 h-0 absolute top-0 left-0 w-full"
+        class="bg-lime-300 h-0 absolute top-0 left-0 w-full"
         id="scroll-spy"
       ></span>
       <i
@@ -184,7 +190,8 @@
               <a class="inline-block hoverTxt overflow-hidden p-2" href="#"
                 >Contact</a
               >
-              <a class="inline-block hoverTxt overflow-hidden p-2 menuBtn cursor-pointer"
+              <a
+                class="inline-block hoverTxt overflow-hidden p-2 menuBtn cursor-pointer"
                 >Menu</a
               >
             </div>
@@ -253,7 +260,10 @@
         <!--  -->
         <div class="my-20">
           <!--  -->
-          <div id="box01" class="p-4 h-[90dvh] flex mt-16 max-w-7xl mx-auto">
+          <div
+            id="box01"
+            class="p-4 h-[90dvh] max-h-[600px] flex mt-16 max-w-7xl mx-auto"
+          >
             <div
               class="flex justify-center h-full w-full items-center relative text-6xl text-zinc-300"
             >
@@ -262,15 +272,10 @@
                 src="../img/img3.webp"
               />
               <h3
-                class="text-[12vw] text-white font-mich leading-none absolute top-1/2 -translate-y-1/2 z-10"
+                class="text-9xl text-white font-mich leading-none absolute top-1/2 -translate-y-1/2 z-10"
               >
                 Lets
-                <a
-                  href="#"
-                  class="rounded-4xl block transition-all duration-300 -mt-8"
-                >
-                  Connect!
-                </a>
+                <a href="#" class="block"> Connect! </a>
               </h3>
             </div>
           </div>
@@ -409,7 +414,7 @@
           <div class="max-w-7xl mx-auto">
             <!--  -->
             <div
-              class="overflow-hidden h-[80dvh] mt-12 relative group imgCursor cursor-pointer"
+              class="overflow-hidden h-[80dvh] max-h-[700px] mt-12 relative group imgCursor cursor-pointer"
             >
               <img
                 src="../img/img8.webp"
@@ -461,7 +466,7 @@
             </div>
             <!--  -->
             <div
-              class="overflow-hidden h-[80dvh] mt-12 relative group imgCursor cursor-pointer"
+              class="overflow-hidden h-[80dvh] max-h-[700px] mt-12 relative group imgCursor cursor-pointer"
             >
               <img
                 src="../img/img9.webp"
@@ -513,7 +518,7 @@
             </div>
             <!--  -->
             <div
-              class="overflow-hidden h-[80dvh] mt-12 relative group imgCursor cursor-pointer"
+              class="overflow-hidden h-[80dvh] max-h-[700px] mt-12 relative group imgCursor cursor-pointer"
             >
               <img
                 src="../img/img10.webp"
@@ -565,7 +570,7 @@
             </div>
             <!--  -->
             <div
-              class="overflow-hidden h-[80dvh] mt-12 relative group imgCursor cursor-pointer"
+              class="overflow-hidden h-[80dvh] max-h-[700px] mt-12 relative group imgCursor cursor-pointer"
             >
               <img
                 src="../img/img11.webp"
@@ -857,6 +862,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
     <script src="../js/script.js"></script>
   </body>
 </html>

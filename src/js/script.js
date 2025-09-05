@@ -3,7 +3,8 @@ gsap.registerPlugin(
   ScrollTrigger,
   ScrollSmoother,
   SplitText,
-  ScrambleTextPlugin
+  ScrambleTextPlugin,
+  ScrollToPlugin
 );
 
 ScrollSmoother.create({
@@ -438,44 +439,6 @@ gsap.to(".marque", {
   ease: "none",
 });
 
-window.addEventListener("wheel", (e) => {
-  if (e.deltaY > 0) {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(-200%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 180,
-      duration: 0.5,
-    });
-  } else {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(0%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 0,
-      duration: 0.5,
-    });
-  }
-});
-
 let splitPara = SplitText.create(".splitPara");
 
 gsap.from(splitPara.lines, {
@@ -623,14 +586,102 @@ gsap.from(splitYPara.words, {
   duration: 2,
   ease: "back",
 });
+function wheelScroll(e) {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
+  const fullHeight = document.documentElement.scrollHeight;
+  const scrollPercent = Math.floor(
+    (scrollTop / (fullHeight - windowHeight)) * 100 + 1
+  );
 
-window.addEventListener("scroll", (e) => {
+  if (e.deltaY > 0) {
+    gsap.to(".marque", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      transform: "translateX(-200%)",
+      duration: 2,
+      repeat: -1,
+      ease: "none",
+    });
+    gsap.to(".marque img", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      rotate: 180,
+      duration: 0.5,
+    });
+    gsap.to("#scroll-spy-img", {
+      rotate: `${scrollPercent * 10}deg`,
+      duration: 1,
+      ease: "power.inout",
+    });
+  } else {
+    gsap.to(".marque", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      transform: "translateX(0%)",
+      duration: 2,
+      repeat: -1,
+      ease: "none",
+    });
+    gsap.to(".marque img", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      rotate: 0,
+      duration: 0.5,
+    });
+    gsap.to("#scroll-spy-img", {
+      rotate: `${scrollPercent * 10}deg`,
+      duration: 1,
+      ease: "power.inout",
+    });
+  }
+}
+
+window.addEventListener("wheel", wheelScroll);
+window.addEventListener("scroll", wheelScroll);
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
+  const fullHeight = document.documentElement.scrollHeight;
+
+  const scrollPercent = Math.floor(
+    (scrollTop / (fullHeight - windowHeight)) * 100 + 1
+  );
+
+  if (scrollPercent === 100) {
+    gsap.to("#scrollTopBtn", {
+      rotate: "180deg",
+      duration: 0.4,
+    });
+  } else if (scrollPercent === 1) {
+    gsap.to("#scrollTopBtn", {
+      rotate: "0deg",
+      duration: 0.4,
+    });
+  }
+
   gsap.to("#scroll-spy", {
-    scrollTrigger: {
-      trigger: "#scroll-spy",
-      toggleActions: "restart restart restart restart",
-      scrub: 2,
-    },
-    height: "100%",
+    height: `${scrollPercent}%`,
   });
+});
+
+document.getElementById("scrollTopBtn").addEventListener("click", () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
+  const fullHeight = document.documentElement.scrollHeight;
+
+  const scrollPercent = Math.floor(
+    (scrollTop / (fullHeight - windowHeight)) * 100 + 1
+  );
+  if (scrollPercent === 100) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 });
