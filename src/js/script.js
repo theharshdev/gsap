@@ -590,41 +590,35 @@ gsap.from(splitYPara.words, {
   ease: "back",
 });
 
+// Create marquee animation once
+const marqueeAnim = gsap.to(".marque", {
+  scrollTrigger: {
+    trigger: ".marque",
+  },
+  xPercent: -200,
+  duration: 5,
+  repeat: -1,
+  ease: "none",
+  paused: true,
+});
+
+// Create image rotation animation once
+const imgAnim = gsap.to(".marque img", {
+  scrollTrigger: {
+    trigger: ".marque",
+  },
+  rotate: 180,
+  duration: 0.5,
+  paused: true,
+});
+
 window.addEventListener("wheel", (e) => {
   if (e.deltaY > 0) {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(-200%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 180,
-      duration: 0.5,
-    });
+    marqueeAnim.play(); // move left
+    imgAnim.play(); // rotate 180
   } else {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(0%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 0,
-      duration: 0.5,
-    });
+    marqueeAnim.reverse(); // move right
+    imgAnim.reverse(); // rotate back
   }
 });
 
