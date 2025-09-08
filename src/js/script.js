@@ -17,6 +17,44 @@ ScrollSmoother.create({
 
 ScrollTrigger.normalizeScroll(true);
 
+window.addEventListener("wheel", (e) => {
+  if (e.deltaY > 0) {
+    gsap.to(".marque", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      transform: "translateX(-200%)",
+      duration: 2,
+      repeat: -1,
+      ease: "none",
+    });
+    gsap.to(".marque img", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      rotate: 180,
+      duration: 0.5,
+    });
+  } else {
+    gsap.to(".marque", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      transform: "translateX(0%)",
+      duration: 2,
+      repeat: -1,
+      ease: "none",
+    });
+    gsap.to(".marque img", {
+      scrollTrigger: {
+        trigger: ".marque",
+      },
+      rotate: 0,
+      duration: 0.5,
+    });
+  }
+});
+
 const tl = gsap.timeline();
 
 tl.to(".loadTxt", {
@@ -588,44 +626,6 @@ gsap.from(splitYPara.words, {
   stagger: 0.5,
   duration: 2,
   ease: "back",
-});
-
-window.addEventListener("wheel", (e) => {
-  if (e.deltaY > 0) {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(-200%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 180,
-      duration: 0.5,
-    });
-  } else {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(0%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 0,
-      duration: 0.5,
-    });
-  }
 });
 
 window.addEventListener("scroll", () => {
