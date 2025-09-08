@@ -321,7 +321,6 @@ imgCursor.forEach((imgCursors) => {
     gsap.to("#cursor", {
       scale: 15,
       duration: 2,
-      opacity: 0.5,
       ease: "elastic.out(1,0.4)",
     });
     document.getElementById("cursor").innerHTML = "View More";
