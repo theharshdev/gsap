@@ -17,41 +17,27 @@ ScrollSmoother.create({
 
 ScrollTrigger.normalizeScroll(true);
 
+const marqueeTween = gsap.to(".marque", {
+  xPercent: -200,
+  duration: 2,
+  repeat: -1,
+  ease: "none",
+  paused: true,
+});
+
+const rotateTween = gsap.to(".marque img", {
+  rotate: 180,
+  duration: 0.5,
+  paused: true,
+});
+
 window.addEventListener("wheel", (e) => {
   if (e.deltaY > 0) {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(-200%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 180,
-      duration: 0.5,
-    });
+    marqueeTween.play();
+    rotateTween.play();
   } else {
-    gsap.to(".marque", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      transform: "translateX(0%)",
-      duration: 2,
-      repeat: -1,
-      ease: "none",
-    });
-    gsap.to(".marque img", {
-      scrollTrigger: {
-        trigger: ".marque",
-      },
-      rotate: 0,
-      duration: 0.5,
-    });
+    marqueeTween.reverse();
+    rotateTween.reverse();
   }
 });
 
